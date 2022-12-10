@@ -1,5 +1,7 @@
 body {
-  font-family: "Single Day", sans-serif; }
+  font-family: "Hi Melody", sans-serif;
+  font-size: 22px; 
+}
 
 /* Home Page Style */
 .ww-home-page {
@@ -183,3 +185,4 @@ body {
 
 .btn-outline-primary:hover {
   color: #fff; }
+

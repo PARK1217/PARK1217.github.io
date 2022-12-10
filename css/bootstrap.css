@@ -137,7 +137,7 @@ a {
   background-color: transparent; }
   a:hover {
     color: #f04d30;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([class]) {
   color: inherit;
