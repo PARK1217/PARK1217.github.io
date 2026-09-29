@@ -108,7 +108,9 @@ h2{font-family:var(--serif);font-weight:800;font-size:26px;letter-spacing:-.015e
 .shots img{display:block;width:100%;height:190px;object-fit:cover;object-position:top left}
 .shots figcaption{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.55}
 .shots.two{grid-template-columns:1fr 1fr}
-@media (max-width:860px){.shots,.shots.two{grid-template-columns:1fr}.shots img{height:auto}}
+.shots a.zoom{position:relative;height:190px;background:#0d1117}
+.shots a.zoom img{position:absolute;width:178%;max-width:none;height:auto;left:-39%;top:-4%}
+@media (max-width:860px){.shots,.shots.two{grid-template-columns:1fr}.shots img{height:auto}.shots a.zoom{height:auto;aspect-ratio:16/8}}
 /* career */
 .career{display:grid;grid-template-columns:280px 1fr;gap:40px}
 .career .co{font-weight:600}
@@ -224,9 +226,9 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <li class="sure"><b>데이터에 없으면 없다고, 모호하면 되묻기</b><span>"삼성"처럼 대상이 여럿인 질문은 후보를 보여주고 되묻고, 근거 데이터가 없는 질문은 없다고 먼저 밝힙니다. 직접 10개 질문으로 검증해 금액 단위 오류, 답변 잘림, 범위 밖 질문 응대를 찾아 고쳤습니다.</span></li>
 </ul>
 <div class="shots two">
-<figure><a href="stockbot-pred-eval.jpg"><img src="stockbot-pred-eval.jpg" alt="stock-bot 예측 검증 화면. 채점 표본 8,938건, 방향 적중률 46%, 범위 적중률 83%와 7·14·21일 기간별 정확도가 표시된다" loading="lazy"></a>
+<figure><a class="zoom" href="stockbot-pred-eval.jpg"><img src="stockbot-pred-eval.jpg" alt="stock-bot 예측 검증 화면. 채점 표본 8,938건, 방향 적중률 46%, 범위 적중률 83%와 7·14·21일 기간별 정확도가 표시된다" loading="lazy"></a>
 <figcaption>예측 검증. 8,938건을 채점한 결과를 좋든 나쁘든 그대로 보여줍니다.</figcaption></figure>
-<figure><a href="stockbot-chat-eval.jpg"><img src="stockbot-chat-eval.jpg" alt="stock-bot 챗봇 정확도 화면. 챗봇이 한 매수와 매도 판단이 종목별로 기록되고 21일 뒤 실제 수익률과 적중 여부가 표시된다" loading="lazy"></a>
+<figure><a class="zoom" href="stockbot-chat-eval.jpg"><img src="stockbot-chat-eval.jpg" alt="stock-bot 챗봇 정확도 화면. 챗봇이 한 매수와 매도 판단이 종목별로 기록되고 21일 뒤 실제 수익률과 적중 여부가 표시된다" loading="lazy"></a>
 <figcaption>챗봇 정확도. 챗봇이 한 매수·매도 판단을 21일 뒤 실제 가격으로 채점합니다.</figcaption></figure>
 </div>
 </article>
