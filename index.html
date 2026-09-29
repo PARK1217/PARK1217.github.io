@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박수산 | 백엔드와 AI 엔지니어</title>
+<meta name="description" content="금융·헬스케어 SI 3년 4개월, RAG·에이전트 서비스를 직접 만들어 운영하는 백엔드 개발자 박수산의 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F3F5F7;
+--surface:#FFFFFF;
+--ink:#1B2330;
+--ink-2:#4F5B6A;
+--line:#D9DEE4;
+--sure:#14806E;
+--sure-soft:#DDEFEA;
+--maybe:#B47A00;
+--maybe-soft:#F6EAD0;
+--no:#9A4A4A;
+--no-soft:#F1E1E1;
+--serif:'Nanum Myeongjo', 'Noto Serif KR', Georgia, serif;
+--sans:'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--paper:#141A22; --surface:#1B232D; --ink:#E6EAEF; --ink-2:#A3AEBB; --line:#2E3946;
+--sure:#4CC2A8; --sure-soft:#173A33; --maybe:#E0B04A; --maybe-soft:#3A2F16; --no:#D98C8C; --no-soft:#3B2323;
+}
+}
+:root[data-theme="dark"]{
+--paper:#141A22; --surface:#1B232D; --ink:#E6EAEF; --ink-2:#A3AEBB; --line:#2E3946;
+--sure:#4CC2A8; --sure-soft:#173A33; --maybe:#E0B04A; --maybe-soft:#3A2F16; --no:#D98C8C; --no-soft:#3B2323;
+}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--sure);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+/* header */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:28px 0 0;flex-wrap:wrap}
+.name{font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.top nav{display:flex;gap:20px;font-size:14px;color:var(--ink-2)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--ink);text-decoration:underline}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding:72px 0 88px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.2vw,46px);line-height:1.32;letter-spacing:-.02em;margin:0 0 22px;max-width:15em}
+.hero p{color:var(--ink-2);font-size:17px;max-width:32em;margin:0 0 14px}
+.hero .who{color:var(--ink);font-weight:500}
+.fork{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px 18px}
+.fork svg{width:100%;height:auto;display:block}
+.fork figcaption{font-size:13.5px;color:var(--ink-2);margin-top:10px;line-height:1.6}
+.path{fill:none;stroke-width:2.2;stroke-linecap:round}
+.draw{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s ease-out forwards}
+.d2{animation-delay:.25s}.d3{animation-delay:.5s}
+.pop{opacity:0;animation:pop .4s ease-out forwards}
+.p1{animation-delay:.9s}.p2{animation-delay:1.1s}.p3{animation-delay:1.3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){.draw{animation:none;stroke-dashoffset:0}.pop{animation:none;opacity:1}}
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:800;font-size:26px;letter-spacing:-.015em;margin:0 0 8px}
+.lede{color:var(--ink-2);margin:0 0 40px;max-width:40em}
+/* projects */
+.proj{display:grid;grid-template-columns:280px 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:none;padding-top:8px}
+.proj h3{font-family:var(--serif);font-weight:800;font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+.proj .one{color:var(--ink-2);font-size:15px;margin:0 0 14px}
+.stack{font-size:13px;color:var(--ink-2);line-height:1.7;margin:0 0 16px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;font-size:14px;font-weight:500;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);text-decoration:none}
+.btn:hover{border-color:var(--ink-2)}
+.hint{font-size:13px;color:var(--ink-2);margin:10px 0 0;line-height:1.6}
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.notes li{padding-left:18px;position:relative}
+.notes li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--line)}
+.notes li.sure::before{background:var(--sure)}
+.notes li.maybe::before{background:var(--maybe)}
+.notes li.no::before{background:var(--no)}
+.notes b{font-weight:600}
+.notes li > span{display:block;color:var(--ink-2);font-size:15px}
+.num{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--ink-2);margin:-24px 0 32px}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.shots{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px;margin-top:8px}
+.shots figure{margin:0}
+.shots a{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.shots img{display:block;width:100%;height:190px;object-fit:cover;object-position:top left}
+.shots figcaption{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.55}
+@media (max-width:860px){.shots{grid-template-columns:1fr}.shots img{height:auto}}
+/* career */
+.career{display:grid;grid-template-columns:280px 1fr;gap:40px}
+.career .co{font-weight:600}
+.career .when{color:var(--ink-2);font-size:14px}
+.work{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.work li b{font-weight:600}
+.work li span{color:var(--ink-2);font-size:15px}
+.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
+.learn div{border-top:2px solid var(--ink);padding-top:12px}
+.learn b{display:block;font-weight:600}
+.learn .when{display:block;color:var(--ink-2);font-size:13.5px;margin-bottom:6px}
+.learn p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.65}
+footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){
+.hero{grid-template-columns:1fr;gap:36px;padding:48px 0 64px}
+.proj,.career{grid-template-columns:1fr;gap:18px}
+.learn{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<div class="name">박수산</div>
+<nav aria-label="바로가기">
+<a href="#projects">프로젝트</a>
+<a href="#career">경력</a>
+<a href="https://github.com/PARK1217">GitHub</a>
+<a href="mailto:fasosan@gmail.com">이메일</a>
+</nav>
+</header>
+<main>
+<div class="hero">
+<div>
+<h1>확실할 때만 자동으로, 애매하면 사람에게 넘기는 서비스를 만듭니다.</h1>
+<p class="who">금융·헬스케어 SI 백엔드 3년 4개월, 지금은 RAG와 에이전트 서비스를 직접 만들어 운영합니다.</p>
+<p>AI의 답을 현업이 믿고 쓰려면, 틀렸을 때 어떻게 할지가 먼저 정해져 있어야 한다고 생각합니다.</p>
+</div>
+<figure class="fork" aria-label="대출 심사 점수에 따라 자동 승인, 검토 큐, 자동 거절로 나뉘는 흐름">
+<svg viewBox="0 0 420 260" role="img">
+<title>대출 심사 분기</title>
+<rect x="14" y="108" width="118" height="44" rx="10" fill="var(--paper)" stroke="var(--line)"/>
+<text x="73" y="127" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="var(--sans)" font-weight="600">대출 신청</text>
+<text x="73" y="144" text-anchor="middle" font-size="11.5" fill="var(--ink-2)" font-family="var(--sans)">XGBoost 점수 0~1</text>
+<path class="path draw" d="M132 130 C 190 130, 200 50, 262 50" stroke="var(--sure)"/>
+<path class="path draw d2" d="M132 130 L 262 130" stroke="var(--maybe)"/>
+<path class="path draw d3" d="M132 130 C 190 130, 200 210, 262 210" stroke="var(--no)"/>
+<g class="pop p1">
+<rect x="262" y="28" width="146" height="44" rx="10" fill="var(--sure-soft)"/>
+<text x="276" y="47" font-size="13" fill="var(--ink)" font-family="var(--sans)" font-weight="600">자동 승인</text>
+<text x="276" y="63" font-size="11.5" fill="var(--ink-2)" font-family="var(--sans)">0.85 이상</text>
+</g>
+<g class="pop p2">
+<rect x="262" y="108" width="146" height="44" rx="10" fill="var(--maybe-soft)"/>
+<text x="276" y="127" font-size="13" fill="var(--ink)" font-family="var(--sans)" font-weight="600">담당자 검토 큐</text>
+<text x="276" y="143" font-size="11.5" fill="var(--ink-2)" font-family="var(--sans)">0.30 ~ 0.85</text>
+</g>
+<g class="pop p3">
+<rect x="262" y="188" width="146" height="44" rx="10" fill="var(--no-soft)"/>
+<text x="276" y="207" font-size="13" fill="var(--ink)" font-family="var(--sans)" font-weight="600">자동 거절</text>
+<text x="276" y="223" font-size="11.5" fill="var(--ink-2)" font-family="var(--sans)">0.30 이하</text>
+</g>
+</svg>
+<figcaption>다온뱅크의 대출 심사 흐름입니다. 모델이 확신하는 구간만 자동으로 처리하고, 가운데는 사람이 봅니다. 챗봇도 같은 원칙으로 만들었습니다.</figcaption>
+</figure>
+</div>
+<section id="projects" aria-labelledby="h-projects">
+<h2 id="h-projects">프로젝트</h2>
+<p class="lede">세 프로젝트 모두 혼자 설계하고 만들어 배포했습니다. 기능 목록보다 만들면서 고민한 지점을 적었습니다.</p>
+<div class="legend" aria-hidden="true">
+<span><i style="background:var(--sure)"></i>설계로 해결한 것</span>
+<span><i style="background:var(--maybe)"></i>지금 고치는 중이거나 한계</span>
+</div>
+<article class="proj">
+<div>
+<h3>다온뱅크</h3>
+<p class="one">이체·대출·적금부터 상담 챗봇, 이상거래 탐지, 관리자 콘솔까지 갖춘 은행 서비스</p>
+<p class="stack">FastAPI, Next.js, PostgreSQL(pgvector), Kafka, XGBoost, IsolationForest, Groq·Mistral, Phoenix</p>
+<div class="links"><a class="btn" href="https://daon.chobihome.site">라이브 데모</a><a class="btn" href="https://github.com/PARK1217/bank-portfolio">저장소 보기</a></div>
+</div>
+<ul class="notes">
+<li class="sure"><b>근거가 없으면 답하지 않는 챗봇</b><span>FAQ 키워드, FAQ 임베딩, 약관 벡터 순으로 세 단계를 검색하고, 모두 기준에 못 미치면 답을 만들지 않고 담당자 문의로 안내합니다. 직원용 매뉴얼은 권한에 따라 고객에게 노출되지 않습니다.</span></li>
+<li class="sure"><b>깨져도 되돌릴 수 있는 이체</b><span>타행 정산이 실패하면 출금을 되돌리는 거래가 자동으로 쌓이고, 같은 요청이 두 번 오면 한 번만 처리합니다. 메시지 큐가 멈춰도 같은 처리를 서버 안에서 이어갑니다.</span></li>
+<li class="sure"><b>왜 의심스러운지 말해 주는 이상거래 탐지</b><span>규칙 8개와 이상치 탐지 모델 점수를 합치고, 기준을 넘으면 LLM이 의심 사유를 고객이 읽을 수 있는 문장으로 설명합니다.</span></li>
+<li class="sure"><b>같은 질문은 모델을 다시 부르지 않기</b><span>질문 캐시로 응답을 <span class="num">1,812ms</span>에서 <span class="num">1ms</span>로 줄였고, 모든 호출의 토큰·지연·프롬프트를 남겨 나중에 다시 볼 수 있게 했습니다.</span></li>
+<li class="maybe"><b>데이터를 더 넣는다고 좋아지지 않았다</b><span>약관만으로는 부족해 은행 업무 매뉴얼을 직접 써서 넣고 공개 자료까지 더해 <span class="num">1만 2천</span> 청크로 늘렸지만 Faithfulness는 그대로였습니다. 검색 방식을 바꾸는 쪽으로 보고 있습니다.</span></li>
+<li class="maybe"><b>모호한 질문을 단정하는 문제</b><span>"이체 어디서 해?"에 자동이체 화면으로 바로 보내는 것을 발견했습니다. 대상이 여럿이면 선택지부터 보여주도록 고치는 중입니다.</span></li>
+</ul>
+<div class="shots">
+<figure><a href="https://github.com/PARK1217/bank-portfolio/blob/main/docs/screenshots/loan-decision.png"><img src="https://raw.githubusercontent.com/PARK1217/bank-portfolio/main/docs/screenshots/loan-decision.png" alt="관리자 콘솔 심사 이력 화면. 0.880은 자동 승인, 0.710과 0.580은 검토, 0.150은 자동 반려로 분류되어 있다" loading="lazy"></a>
+<figcaption>심사 이력. 점수 구간에 따라 자동 승인, 검토, 자동 반려로 갈립니다.</figcaption></figure>
+<figure><a href="https://github.com/PARK1217/bank-portfolio/blob/main/docs/screenshots/fds-alert.png"><img src="https://raw.githubusercontent.com/PARK1217/bank-portfolio/main/docs/screenshots/fds-alert.png" alt="고객 화면의 의심 거래 확인 카드. 위험도와 탐지 사유가 함께 표시된다" loading="lazy"></a>
+<figcaption>고객이 받는 의심 거래 카드. 왜 의심스러운지 함께 보여줍니다.</figcaption></figure>
+<figure><a href="https://github.com/PARK1217/bank-portfolio/blob/main/docs/screenshots/system_architecture.png"><img src="https://raw.githubusercontent.com/PARK1217/bank-portfolio/main/docs/screenshots/system_architecture.png" alt="다온뱅크 시스템 구조도. 사용자 화면과 관리자 화면이 FastAPI 백엔드를 호출하고, 그 아래 PostgreSQL, Kafka, Phoenix가 연결된다" loading="lazy"></a>
+<figcaption>전체 구조. 즉시 처리할 일과 비동기로 넘길 일을 나눴습니다.</figcaption></figure>
+</div>
+</article>
+<article class="proj">
+<div>
+<h3>Interface Hub</h3>
+<p class="one">흩어진 외부 인터페이스를 한 화면에서 등록·실행·감시·재처리하고, 장애 원인을 말로 물어보는 관제 플랫폼</p>
+<p class="stack">FastAPI, Vue 3, PostgreSQL, Redis, WebSocket, LangChain·FAISS, scikit-learn, GitHub Actions</p>
+<div class="links"><a class="btn" href="https://interface-hub.chobihome.site/">라이브 데모</a><a class="btn" href="https://github.com/PARK1217/interface-hub">저장소 보기</a><a class="btn" href="https://github.com/PARK1217/interface-hub/blob/main/file/Interface_Hub_%EA%B8%B0%ED%9A%8D%EC%84%9C.pdf">기획서 PDF</a></div>
+<p class="hint">데모 로그인 화면에서 관리자·운영자·감사자 계정 카드를 누르면 바로 들어갈 수 있습니다.</p>
+</div>
+<ul class="notes">
+<li class="sure"><b>로그를 한 줄씩 따라가던 일을 한 화면으로</b><span>SI에서 문의가 오면 서버에 들어가 로그를 직접 뒤져야 했습니다. 호출 기록과 전체 에러 스택을 저장해, 원인을 찾으러 다른 도구로 가지 않아도 되게 했습니다.</span></li>
+<li class="sure"><b>장애 자동 분류와 재처리 이력</b><span>시간 초과, 인증, 형식, 서버 오류로 나눠 알림을 보내고, 재처리한 호출은 원래 호출과 이어서 추적합니다.</span></li>
+<li class="sure"><b>AI 키가 없어도 돌아가는 원인 분석</b><span>LLM 키가 있으면 RAG로, 없으면 TF-IDF 유사 사례 검색으로 자동 전환해 어떤 환경에서도 시연이 끊기지 않습니다.</span></li>
+</ul>
+</article>
+<article class="proj">
+<div>
+<h3>stock-bot</h3>
+<p class="one">증권사 세 계좌를 한 대시보드로 보고, 분석과 제안은 봇이 하되 매매 결정은 사람이 하는 반자동 투자 비서</p>
+<p class="stack">Python, FastAPI, PostgreSQL, Redis, APScheduler, FinBERT, Groq·Mistral, Docker, Cloudflare Tunnel</p>
+<div class="links"><a class="btn" href="https://stock.chobihome.site/demo">라이브 데모</a><a class="btn" href="https://github.com/PARK1217/stock-bot">저장소 보기</a></div>
+<p class="hint">데모는 합성 데이터로 동작하며 실제 계좌 정보는 포함되지 않습니다.</p>
+</div>
+<ul class="notes">
+<li class="sure"><b>예측은 나중에 스스로 채점하기</b><span>상승 확률을 단정하지 않고 범위로 내며, 만기가 지나면 실제 결과와 비교해 적중 여부를 기록합니다.</span></li>
+<li class="sure"><b>검증 없이 실돈을 맡기지 않기</b><span>전략은 모의 계좌에서 먼저 돌려보고, 실계좌 자동 집행은 기본으로 잠가 두어 사용자가 직접 켜야만 동작합니다. 모호한 종목명은 임의로 고르지 않고 되묻습니다.</span></li>
+<li class="sure"><b>모델이 사라져도 멈추지 않기</b><span>쓰던 LLM의 서비스 종료 공지를 보고 종료 전에 대체 모델로 옮겼고, 한쪽이 실패하면 다른 모델로 넘어가게 했습니다.</span></li>
+</ul>
+</article>
+</section>
+<section id="career" aria-labelledby="h-career">
+<h2 id="h-career">경력</h2>
+<p class="lede">현업이 실제로 일하는 규칙을 묻고 확인해 시스템으로 옮기는 일을 했습니다.</p>
+<div class="career">
+<div>
+<div class="co">㈜웜힐트랩</div>
+<div class="when">2022.08 – 2025.11</div><div class="when">백엔드 개발, 금융·헬스케어 SI</div>
+</div>
+<ul class="work">
+<li><b>캐피탈사 자동차 대출</b><br><span>고객 등록부터 여신 등록, 가상계좌, 상환·이자 스케줄러, 중도상환과 근저당 해제까지 대출 한 건의 처음과 끝</span></li>
+<li><b>보험사·병원 건강검진 데이터</b><br><span>외부에서 받은 검진 데이터를 쓰임새에 맞춰 11개 테이블로 나누고, 이후 병원 프로젝트에 같은 수신 로직을 재사용</span></li>
+<li><b>헬스케어 예약 서비스 개발과 운영</b><br><span>병원 예약 대시보드 개발, 운영 중 예약 취소 API를 제안해 직접 구현</span></li>
+<li><b>기록 앱 서버 이전</b><br><span>SVN에서 Git으로, Jenkins 배포 구성, AWS 이전과 DB 버전업</span></li>
+</ul>
+</div>
+</section>
+<section aria-labelledby="h-learn">
+<h2 id="h-learn">배운 것</h2>
+<div class="learn">
+<div>
+<b>커널아카데미 AI 과정</b>
+<span class="when">2026.03 – 2026.06</span>
+<p>머신러닝, LLM, RAG, LangGraph 멀티 에이전트, MCP 서버, 은행 업무와 DB 모델링</p>
+</div>
+<div>
+<b>코드잇 데이터 분석</b>
+<span class="when">2026.08 – 2026.09</span>
+<p>pandas 전처리, 시각화, 가설 검정과 회귀 분석</p>
+</div>
+<div>
+<b>자격</b>
+<span class="when">2026</span>
+<p>데이터분석 준전문가(ADsP), 리눅스마스터 2급</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<span>박수산 <a href="mailto:fasosan@gmail.com">fasosan@gmail.com</a></span>
+<span><a href="https://github.com/PARK1217">github.com/PARK1217</a></span>
+</footer>
+</div>
+</body>
+</html>
