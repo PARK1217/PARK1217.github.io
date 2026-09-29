@@ -43,7 +43,9 @@ a:focus-visible{outline:2px solid var(--sure);outline-offset:3px;border-radius:2
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 /* header */
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:28px 0 0;flex-wrap:wrap}
+.id{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .name{font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.mail{font-size:14px;color:var(--ink-2);user-select:all}
 .top nav{display:flex;gap:20px;font-size:14px;color:var(--ink-2)}
 .top nav a{text-decoration:none}
 .top nav a:hover{color:var(--ink);text-decoration:underline}
@@ -134,12 +136,11 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <body>
 <div class="wrap">
 <header class="top">
-<div class="name">박수산</div>
+<div class="id"><span class="name">박수산</span><span class="mail">fasosan@gmail.com</span></div>
 <nav aria-label="바로가기">
 <a href="#projects">프로젝트</a>
 <a href="#career">경력</a>
 <a href="https://github.com/PARK1217">GitHub</a>
-<a href="mailto:fasosan@gmail.com">이메일</a>
 </nav>
 </header>
 <main>
