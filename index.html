@@ -218,10 +218,17 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <p class="hint">데모는 합성 데이터로 동작하며 실제 계좌 정보는 포함되지 않습니다.</p>
 </div>
 <ul class="notes">
-<li class="sure"><b>예측은 나중에 스스로 채점하기</b><span>상승 확률을 단정하지 않고 범위로 내며, 만기가 지나면 실제 결과와 비교해 적중 여부를 기록합니다.</span></li>
+<li class="sure"><b>예측은 나중에 스스로 채점하기</b><span>7·14·21영업일 뒤 가격을 예측하고, 기간이 지나면 실제 결과로 채점합니다. <span class="num">8,938</span>건을 채점해 보니 방향 적중률은 <span class="num">46%</span>로 동전 던지기 수준이었고 범위 적중률은 <span class="num">83%</span>였습니다. 그래서 챗봇이 예측을 말할 때 과거 적중률을 함께 밝히게 했습니다.</span></li>
+<li class="sure"><b>챗봇의 말도 채점하기</b><span>챗봇이 답변에서 한 매수·매도 판단을 자동으로 기록하고, 21일 뒤 실제 가격으로 맞았는지 매깁니다.</span></li>
 <li class="sure"><b>검증 없이 실돈을 맡기지 않기</b><span>전략은 모의 계좌에서 먼저 돌려보고, 실계좌 자동 집행은 기본으로 잠가 두어 사용자가 직접 켜야만 동작합니다. 모호한 종목명은 임의로 고르지 않고 되묻습니다.</span></li>
-<li class="sure"><b>데이터에 없으면 없다고, 모호하면 되묻기</b><span>"삼성"처럼 대상이 여럿인 질문은 후보를 보여주고 되묻고, 근거 데이터가 없는 질문은 없다고 먼저 밝힙니다. 직접 10개 질문으로 검증해 금액 단위 오류와 범위 밖 질문 처리 같은 남은 과제도 찾아 두었습니다.</span></li>
+<li class="sure"><b>데이터에 없으면 없다고, 모호하면 되묻기</b><span>"삼성"처럼 대상이 여럿인 질문은 후보를 보여주고 되묻고, 근거 데이터가 없는 질문은 없다고 먼저 밝힙니다. 직접 10개 질문으로 검증해 금액 단위 오류, 답변 잘림, 범위 밖 질문 응대를 찾아 고쳤습니다.</span></li>
 </ul>
+<div class="shots two">
+<figure><a href="stockbot-pred-eval.jpg"><img src="stockbot-pred-eval.jpg" alt="stock-bot 예측 검증 화면. 채점 표본 8,938건, 방향 적중률 46%, 범위 적중률 83%와 7·14·21일 기간별 정확도가 표시된다" loading="lazy"></a>
+<figcaption>예측 검증. 8,938건을 채점한 결과를 좋든 나쁘든 그대로 보여줍니다.</figcaption></figure>
+<figure><a href="stockbot-chat-eval.jpg"><img src="stockbot-chat-eval.jpg" alt="stock-bot 챗봇 정확도 화면. 챗봇이 한 매수와 매도 판단이 종목별로 기록되고 21일 뒤 실제 수익률과 적중 여부가 표시된다" loading="lazy"></a>
+<figcaption>챗봇 정확도. 챗봇이 한 매수·매도 판단을 21일 뒤 실제 가격으로 채점합니다.</figcaption></figure>
+</div>
 </article>
 </section>
 <section id="career" aria-labelledby="h-career">
