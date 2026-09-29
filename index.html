@@ -162,10 +162,10 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 </div>
 <section id="projects" aria-labelledby="h-projects">
 <h2 id="h-projects">프로젝트</h2>
-<p class="lede">세 프로젝트 모두 혼자 설계하고 만들어 배포했습니다. 기능 목록보다 만들면서 고민한 지점을 적었습니다.</p>
+<p class="lede">세 프로젝트 모두 설계부터 배포까지 혼자 진행했습니다. 기능보다 설계하며 고민한 지점을 중심으로 정리했습니다.</p>
 <div class="legend" aria-hidden="true">
 <span><i style="background:var(--sure)"></i>설계로 해결한 것</span>
-<span><i style="background:var(--maybe)"></i>지금 고치는 중이거나 한계</span>
+<span><i style="background:var(--maybe)"></i>현재 개선하고 있는 것</span>
 </div>
 <article class="proj">
 <div>
@@ -175,12 +175,12 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <div class="links"><a class="btn" href="https://daon.chobihome.site">라이브 데모</a><a class="btn" href="https://github.com/PARK1217/bank-portfolio">저장소 보기</a></div>
 </div>
 <ul class="notes">
-<li class="sure"><b>근거가 없으면 답하지 않는 챗봇</b><span>FAQ 키워드, FAQ 임베딩, 약관 벡터 순으로 세 단계를 검색하고, 모두 기준에 못 미치면 답을 만들지 않고 담당자 문의로 안내합니다. 직원용 매뉴얼은 권한에 따라 고객에게 노출되지 않습니다.</span></li>
-<li class="sure"><b>깨져도 되돌릴 수 있는 이체</b><span>타행 정산이 실패하면 출금을 되돌리는 거래가 자동으로 쌓이고, 같은 요청이 두 번 오면 한 번만 처리합니다. 메시지 큐가 멈춰도 같은 처리를 서버 안에서 이어갑니다.</span></li>
-<li class="sure"><b>왜 의심스러운지 말해 주는 이상거래 탐지</b><span>규칙 8개와 이상치 탐지 모델 점수를 합치고, 기준을 넘으면 LLM이 의심 사유를 고객이 읽을 수 있는 문장으로 설명합니다.</span></li>
-<li class="sure"><b>같은 질문은 모델을 다시 부르지 않기</b><span>질문 캐시로 응답을 <span class="num">1,812ms</span>에서 <span class="num">1ms</span>로 줄였고, 모든 호출의 토큰·지연·프롬프트를 남겨 나중에 다시 볼 수 있게 했습니다.</span></li>
-<li class="maybe"><b>데이터를 더 넣는다고 좋아지지 않았다</b><span>약관만으로는 부족해 은행 업무 매뉴얼을 직접 써서 넣고 공개 자료까지 더해 <span class="num">1만 2천</span> 청크로 늘렸지만 Faithfulness는 그대로였습니다. 검색 방식을 바꾸는 쪽으로 보고 있습니다.</span></li>
-<li class="maybe"><b>모호한 질문을 단정하는 문제</b><span>"이체 어디서 해?"에 자동이체 화면으로 바로 보내는 것을 발견했습니다. 대상이 여럿이면 선택지부터 보여주도록 고치는 중입니다.</span></li>
+<li class="sure"><b>근거가 없으면 답하지 않는 챗봇</b><span>FAQ 키워드, FAQ 임베딩, 약관 벡터 순으로 검색하고, 기준에 못 미치면 답을 만들지 않고 상담원 문의로 안내합니다. 직원용 매뉴얼은 권한을 나눠 고객에게 노출되지 않습니다.</span></li>
+<li class="sure"><b>실패해도 되돌릴 수 있는 이체</b><span>타행 정산이 실패하면 출금 취소 거래가 자동으로 생성되고, 중복 요청은 한 번만 처리합니다. 메시지 큐가 멈춰도 서버 안에서 처리를 이어갑니다.</span></li>
+<li class="sure"><b>의심 사유를 설명하는 이상거래 탐지</b><span>규칙 8개와 이상치 탐지 모델 점수를 합산하고, 기준을 넘으면 LLM이 의심 사유를 고객이 이해할 수 있는 문장으로 설명합니다.</span></li>
+<li class="sure"><b>반복 질문은 캐시로 응답</b><span>같은 질문은 캐시로 처리해 응답 시간을 <span class="num">1,812ms</span>에서 <span class="num">1ms</span>로 줄였고, 모든 호출의 토큰·지연·프롬프트를 기록해 추적합니다.</span></li>
+<li class="maybe"><b>검색 품질은 데이터 양보다 검색 방식</b><span>약관 밖 질문까지 답하도록 은행 업무 매뉴얼을 직접 작성해 코퍼스를 <span class="num">1만 2천</span> 청크로 넓혔습니다. 답변 충실도(Faithfulness)가 양에 비례하지 않는 것을 확인해, 지금은 문서 분할과 검색 방식을 개선하고 있습니다.</span></li>
+<li class="maybe"><b>모호한 질문은 선택지로 되묻기</b><span>"이체 어디서 해?"처럼 대상이 여럿인 질문에는 한 화면으로 바로 보내지 않고, 즉시·예약·자동이체 중에서 고르게 하도록 개선하고 있습니다.</span></li>
 </ul>
 <div class="shots">
 <figure><a href="https://github.com/PARK1217/bank-portfolio/blob/main/docs/screenshots/loan-decision.png"><img src="https://raw.githubusercontent.com/PARK1217/bank-portfolio/main/docs/screenshots/loan-decision.png" alt="관리자 콘솔 심사 이력 화면. 0.880은 자동 승인, 0.710과 0.580은 검토, 0.150은 자동 반려로 분류되어 있다" loading="lazy"></a>
@@ -200,9 +200,9 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <p class="hint">데모 로그인 화면에서 관리자·운영자·감사자 계정 카드를 누르면 바로 들어갈 수 있습니다.</p>
 </div>
 <ul class="notes">
-<li class="sure"><b>로그를 한 줄씩 따라가던 일을 한 화면으로</b><span>SI에서 문의가 오면 서버에 들어가 로그를 직접 뒤져야 했습니다. 호출 기록과 전체 에러 스택을 저장해, 원인을 찾으러 다른 도구로 가지 않아도 되게 했습니다.</span></li>
-<li class="sure"><b>장애 자동 분류와 재처리 이력</b><span>시간 초과, 인증, 형식, 서버 오류로 나눠 알림을 보내고, 재처리한 호출은 원래 호출과 이어서 추적합니다.</span></li>
-<li class="sure"><b>AI 키가 없어도 돌아가는 원인 분석</b><span>LLM 키가 있으면 RAG로, 없으면 TF-IDF 유사 사례 검색으로 자동 전환해 어떤 환경에서도 시연이 끊기지 않습니다.</span></li>
+<li class="sure"><b>로그 추적을 한 화면으로</b><span>호출 기록과 에러 스택을 함께 저장해, 서버에 접속하지 않고도 한 화면에서 장애 원인을 찾습니다.</span></li>
+<li class="sure"><b>장애 자동 분류와 재처리 이력</b><span>시간 초과, 인증, 형식, 서버 오류로 자동 분류해 알리고, 재처리한 호출은 원래 호출과 연결해 추적합니다.</span></li>
+<li class="sure"><b>LLM 없이도 멈추지 않는 원인 분석</b><span>LLM을 쓸 수 있으면 RAG로, 쓸 수 없으면 TF-IDF 유사 사례 검색으로 자동 전환해 분석이 끊기지 않습니다.</span></li>
 </ul>
 <div class="shots two">
 <figure><a href="ih-topology.jpg"><img src="ih-topology.jpg" alt="Interface Hub 통합관제 토폴로지. 사내 시스템, 카카오와 토스 같은 외부 제휴사, 보험개발원과 신용정보원 등 외부 규제기관 인터페이스가 실패율과 함께 표시된다" loading="lazy"></a>
@@ -220,14 +220,14 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);f
 <p class="hint">데모는 합성 데이터로 동작하며 실제 계좌 정보는 포함되지 않습니다.</p>
 </div>
 <ul class="notes">
-<li class="sure"><b>예측은 나중에 스스로 채점하기</b><span>7·14·21영업일 뒤 가격을 예측하고, 기간이 지나면 실제 결과로 채점합니다. <span class="num">8,938</span>건을 채점해 보니 방향 적중률은 <span class="num">46%</span>로 동전 던지기 수준이었고 범위 적중률은 <span class="num">83%</span>였습니다. 그래서 챗봇이 예측을 말할 때 과거 적중률을 함께 밝히게 했습니다.</span></li>
+<li class="sure"><b>예측은 나중에 스스로 채점하기</b><span>7·14·21영업일 뒤 가격을 예측하고 기간이 지나면 실제 결과로 채점합니다. <span class="num">8,938</span>건을 채점한 결과 방향 적중률 <span class="num">46%</span>, 범위 적중률 <span class="num">83%</span>로 범위 예측이 더 믿을 만하다는 것을 확인했고, 챗봇이 예측을 말할 때 과거 적중률을 함께 제시하게 했습니다.</span></li>
 <li class="sure"><b>챗봇의 말도 채점하기</b><span>챗봇이 답변에서 한 매수·매도 판단을 자동으로 기록하고, 21일 뒤 실제 가격으로 맞았는지 매깁니다.</span></li>
-<li class="sure"><b>검증 없이 실돈을 맡기지 않기</b><span>전략은 모의 계좌에서 먼저 돌려보고, 실계좌 자동 집행은 기본으로 잠가 두어 사용자가 직접 켜야만 동작합니다. 모호한 종목명은 임의로 고르지 않고 되묻습니다.</span></li>
-<li class="sure"><b>데이터에 없으면 없다고, 모호하면 되묻기</b><span>"삼성"처럼 대상이 여럿인 질문은 후보를 보여주고 되묻고, 근거 데이터가 없는 질문은 없다고 먼저 밝힙니다. 직접 10개 질문으로 검증해 금액 단위 오류, 답변 잘림, 범위 밖 질문 응대를 찾아 고쳤습니다.</span></li>
+<li class="sure"><b>검증 전에는 실계좌에 맡기지 않기</b><span>전략은 모의투자로 먼저 검증하고, 실계좌 자동 매매는 기본으로 꺼 두어 사용자가 직접 켜야 동작합니다.</span></li>
+<li class="sure"><b>데이터에 없으면 없다고, 모호하면 되묻기</b><span>"삼성"처럼 대상이 여럿이면 후보를 보여주고 되묻고, 근거 데이터가 없으면 없다고 먼저 밝힙니다. 투자와 무관한 질문은 정중히 거절합니다.</span></li>
 </ul>
 <div class="shots two">
 <figure><a class="zoom" href="stockbot-pred-eval.jpg"><img src="stockbot-pred-eval.jpg" alt="stock-bot 예측 검증 화면. 채점 표본 8,938건, 방향 적중률 46%, 범위 적중률 83%와 7·14·21일 기간별 정확도가 표시된다" loading="lazy"></a>
-<figcaption>예측 검증. 8,938건을 채점한 결과를 좋든 나쁘든 그대로 보여줍니다.</figcaption></figure>
+<figcaption>예측 검증. 8,938건의 채점 결과를 기간별로 공개합니다.</figcaption></figure>
 <figure><a class="zoom" href="stockbot-chat-eval.jpg"><img src="stockbot-chat-eval.jpg" alt="stock-bot 챗봇 정확도 화면. 챗봇이 한 매수와 매도 판단이 종목별로 기록되고 21일 뒤 실제 수익률과 적중 여부가 표시된다" loading="lazy"></a>
 <figcaption>챗봇 정확도. 챗봇이 한 매수·매도 판단을 21일 뒤 실제 가격으로 채점합니다.</figcaption></figure>
 </div>
